@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'Auth.apps.AuthConfig',
     'allauth.socialaccount.providers.google',
+    'BTCConverter',
 
 ]
 
