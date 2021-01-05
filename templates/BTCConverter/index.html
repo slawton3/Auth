@@ -2,15 +2,16 @@
 {% load socialaccount %}
 {% block content %}
 
-<h1>Welcome to Crypto</h1>
+
 <a href="{% provider_login_url 'google' %}">Sign Up</a>
     <p><h1>Please enter your currency conversion:</h1></p><br />
-    <form action="" method="post">
-      {%csrf_token%}
-      {{convertForm.as_p}}
-      <input type="submit" name="submit" />
-    </form>
-
+    <div class="form-group">
+        <form action="" method="post">
+          {%csrf_token%}
+          {{convertForm.as_p}}
+            <button type="submit" class="btn btn-primary" name="submit">Submit</button>
+        </form>
+    </div>
 {% if conversionVal %}
     <p>The value of this amount in Bitcoin is: {{ conversionVal }}</p>
 {% endif %}

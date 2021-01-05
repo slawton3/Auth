@@ -3,49 +3,74 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
-    <meta name="google" content="notranslate" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.5.3/superhero/bootstrap.min.css" integrity="sha512-tJAtzRPzKacKvYxMF7zn+nnr1d4nYuMiAC9/6Pqts2Y9k4sokd8kzL74IPW7xEeFT1APVjnExZtplMyY5fJvzA==" crossorigin="anonymous" />
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+    <meta name="google" content="notranslate"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.5.3/superhero/bootstrap.min.css"
+          integrity="sha512-tJAtzRPzKacKvYxMF7zn+nnr1d4nYuMiAC9/6Pqts2Y9k4sokd8kzL74IPW7xEeFT1APVjnExZtplMyY5fJvzA=="
+          crossorigin="anonymous"/>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+            crossorigin="anonymous"></script>
     <link rel="stylesheet" href="{% static "css/style.css" %}">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
 
     <title>Crypto</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow" id="mainNav">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="{% url 'home' %}">Home</a>
-            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive"
-                    aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item text-black">
-                            <a class="nav-link text-black font-weight-bold" href="#">About</a>
-                        </li>
-                        <li class="nav-item text-black">
-                            <a class="nav-link text-black font-weight-bold" href="#">Policy</a>
-                        </li>
-                </ul>
-            </div>
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow" id="mainNav">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="{% url 'home' %}">Home</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item text-black">
+                    <a class="nav-link text-black font-weight-bold" href="#">About</a>
+                </li>
+                <li class="nav-item text-black">
+                    <a class="nav-link text-black font-weight-bold" href="#">Policy</a>
+                </li>
+            </ul>
         </div>
-    </nav>
+    </div>
+</nav>
+<script type="text/javascript" src="https://files.coinmarketcap.com/static/widget/coinMarquee.js"></script>
+<div id="coinmarketcap-widget-marquee" coins="1,1027,825,2,52,6636,2010" currency="USD" theme="dark" transparent="false"
+     show-symbol-logo="true"></div>
+
+<div style="height:433px; background-color: #1D2330; overflow:hidden; box-sizing: border-box; border: 1px solid #282E3B; border-radius: 4px; text-align: right; line-height:14px; font-size: 12px; font-feature-settings: normal; text-size-adjust: 100%; box-shadow: inset 0 -20px 0 0 #262B38; padding: 0px; margin: 0px; width: 100%;">
+    <div style="height:413px; padding:0px; margin:0px; width: 100%;">
+        <iframe src="https://widget.coinlib.io/widget?type=full_v2&theme=dark&cnt=6&pref_coin_id=1505&graph=yes"
+                width="100%" height="409px" scrolling="auto" marginwidth="0" marginheight="0" frameborder="0" border="0"
+                style="border:0;margin:0;padding:0;"></iframe>
+    </div>
+    <div style="color: #626B7F; line-height: 14px; font-weight: 400; font-size: 11px; box-sizing: border-box; padding: 2px 6px; width: 100%; font-family: Verdana, Tahoma, Arial, sans-serif;">
+        <a href="https://coinlib.io" target="_blank"
+           style="font-weight: 500; color: #626B7F; text-decoration:none; font-size:11px">Cryptocurrency Prices</a>&nbsp;by
+        Coinlib
+    </div>
+</div>
+{% block content %}
+    <!--Content Goes Here-->
+{% endblock content %}
 
 
-    {% block content %}
-     <!--Content Goes Here-->
-    {% endblock content%}
 
-
-
-    <footer class="footer py-3 bg-grey">
-        <p class="m-0 text-dark text-center">Copyright 2020 &copy; Xault</p>
-    </footer>
+<footer class="footer py-3 bg-grey">
+    <p class="m-0 text-dark text-center">Copyright 2020 &copy; Xault</p>
+</footer>
 </body>
 </html>
