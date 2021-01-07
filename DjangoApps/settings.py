@@ -44,11 +44,14 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'Auth.apps.AuthConfig',
     'allauth.socialaccount.providers.google',
+    'allauth.socialaccount.providers.github',
     'BTCConverter',
 
 ]
 
-SITE_ID = 1
+SITE_ID = 2
+
+LOGIN_REDIRECT_URL = 'home'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

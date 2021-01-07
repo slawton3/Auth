@@ -2,8 +2,38 @@
 {% load socialaccount %}
 {% block content %}
 
-
-<a href="{% provider_login_url 'google' %}">Sign Up</a>
+{% if user.is_authenticated %}
+<p>Welcome {{ user.username }}!</p>
+{% else %}
+<a href="{% provider_login_url 'github' %}">Register with Github</a><br />
+<a href="{% provider_login_url 'google' %}">Register with Google</a>
+{% endif %}
+    {% for i in currList %}
+        <p>{{ i }}</p><br />
+    {% endfor %}
+    {% for i in tickerList %}
+        <p>{{ i }}</p><br />
+    {% endfor %}
+    <table id="exchangeRates" class="tablesorter">
+      <thead>
+        <tr>
+          <th>Currency</th>
+          <th>First Name</th>
+          <th>Email</th>
+          <th>Due</th>
+          <th>Web Site</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Smith</td>
+          <td>John</td>
+          <td>jsmith@gmail.com</td>
+          <td>$50.00</td>
+          <td>http://www.jsmith.com</td>
+        </tr>
+      </tbody>
+    </table>
     <p><h1>Please enter your currency conversion:</h1></p><br />
     <div class="form-group">
         <form action="" method="post">
