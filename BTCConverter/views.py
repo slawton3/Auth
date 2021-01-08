@@ -2,22 +2,34 @@ from django.views import View
 from django.shortcuts import render
 from .forms import ConvertForm
 from blockchain import statistics, exchangerates
+import pandas as pd
 import json
 import requests
 
 class Home(View):
     def get(self, request):
         currList = []
-        tickerList = []
+        buyList = []
+        sellList = []
+        past15 = []
+        cols = ["Currency", "Last Buy Price", "Last Sell Price", "Price 15 Mins Ago"]
         convertForm = ConvertForm()
         stats = statistics.get()
         ticker = exchangerates.get_ticker()
         for i in ticker:
             currList.append(i)
-            tickerList.append(ticker[i])
-        print(currList)
-        print(tickerList)
-        return render(request, 'BTCConverter/index.html', {'convertForm': convertForm, "currList": currList, "tickerList": tickerList})
+            buyList.append(ticker[i].buy)
+            sellList.append(ticker[i].sell)
+            past15.append(ticker[i].p15min)
+
+        data = {cols[0]: currList,
+                cols[1]: buyList,
+                cols[2]: sellList,
+                cols[3]: past15}
+        df = pd.DataFrame(data, columns=cols)
+        htmlTable = df.to_html(index=False, classes="table, exchangeRates")
+        print(htmlTable)
+        return render(request, 'BTCConverter/index.html', {'convertForm': convertForm, "htmlTable": htmlTable})
 
     def post(self, request):
         convertForm = ConvertForm()

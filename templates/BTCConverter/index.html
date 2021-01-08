@@ -14,26 +14,9 @@
     {% for i in tickerList %}
         <p>{{ i }}</p><br />
     {% endfor %}
-    <table id="exchangeRates" class="tablesorter">
-      <thead>
-        <tr>
-          <th>Currency</th>
-          <th>First Name</th>
-          <th>Email</th>
-          <th>Due</th>
-          <th>Web Site</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Smith</td>
-          <td>John</td>
-          <td>jsmith@gmail.com</td>
-          <td>$50.00</td>
-          <td>http://www.jsmith.com</td>
-        </tr>
-      </tbody>
-    </table>
+    <div id="exchangeRates" class="tablesorter">
+      {{ htmlTable | safe }}
+    </div>
     <p><h1>Please enter your currency conversion:</h1></p><br />
     <div class="form-group">
         <form action="" method="post">
