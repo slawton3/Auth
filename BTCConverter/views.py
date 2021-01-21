@@ -44,7 +44,7 @@ class Home(View):
         df = pd.DataFrame(data, columns=cols)
         htmlTable = df.to_html(index=False, classes="table, exchangeRates")
         print(htmlTable)
-        return render(request, 'BTCConverter/index.html', {'convertForm': convertForm, "htmlTable": htmlTable, "emailForm": form})
+        return render(request, 'BTCConverter/index.html', {'convertForm': convertForm, "emailForm": form})
 
     def post(self, request):
         convertForm = ConvertForm()
@@ -84,4 +84,5 @@ class Subscribe(View):
             else:
                 subscibe(form.instance.email)
                 form.save()
+                messages.info(request, "You are now subscribed to CryptoLink's newsletter!")
         return render(request, 'BTCConverter/subscribe.html', {"emailForm": form})
