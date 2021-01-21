@@ -16,10 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 #from Auth.views import Home
-from BTCConverter.views import Home
+from BTCConverter.views import Home, Subscribe
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('allauth.urls')),
-    path('', Home.as_view(), name='home')
+    path('', Home.as_view(), name='home'),
+    path('Subscribe/', Subscribe.as_view(), name='Subscribe'),
 ]
