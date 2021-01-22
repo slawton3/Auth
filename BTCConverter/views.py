@@ -58,16 +58,21 @@ class Home(View):
             print(conversionVal)
             return render(request, 'BTCConverter/index.html', {'convertForm': convertForm, 'conversionVal': conversionVal})
 
-def subscibe(email):
+def subscibe(email, firstName, lastName):
     data = {
         "email_address": email,
-        "status": "subscribed"
+        "status": "subscribed",
+        "merge_fields": {
+            "FNAME": firstName,
+            "LNAME": lastName
+        }
     }
     r = requests.post(
         members_endpoint,
         auth=("", MAILCHIMP_API_KEY),
         data=json.dumps(data)
     )
+    print(r)
     return r.status_code, r.json()
 
 class Subscribe(View):
@@ -82,7 +87,7 @@ class Subscribe(View):
             if email_signup_queryset.exists():
                 messages.info(request, "You are already subscribed.")
             else:
-                subscibe(form.instance.email)
+                subscibe(form.instance.email, form.instance.firstName, form.instance.lastName)
                 form.save()
                 messages.info(request, "You are now subscribed to CryptoLink's newsletter!")
         return render(request, 'BTCConverter/subscribe.html', {"emailForm": form})

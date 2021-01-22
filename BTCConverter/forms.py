@@ -19,6 +19,18 @@ class ConvertForm(forms.Form):
 
 
 class EmailSignupForm(forms.ModelForm):
+    firstName = forms.CharField(widget=forms.TextInput(attrs={
+        "type": "firstName",
+        "name": "firstName",
+        "id": "firstName",
+        "placeholder": "First Name"
+    }), label="")
+    lastName = forms.CharField(widget=forms.TextInput(attrs={
+        "type": "lastName",
+        "name": "lastName",
+        "id": "lastName",
+        "placeholder": "Last Name"
+    }), label="")
     email = forms.EmailField(widget=forms.TextInput(attrs={
         "type": "email",
         "name": "email",
@@ -27,4 +39,4 @@ class EmailSignupForm(forms.ModelForm):
     }), label="")
     class Meta:
         model = Signup
-        fields = ('email', )
+        fields = ('firstName', 'lastName', 'email', )
